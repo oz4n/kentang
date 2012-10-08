@@ -1,0 +1,10 @@
+268df783cf93604a8e49ddf84e505e6e  ./https-ok.py
+efbe286d890585f54809a96fbdcce3af  ./5.ini
+408234dfffd5897a8d4a1ce8a18525f9  ./https-fail.py
+6567d1463a22abcb27dc6879dfc665b1  ./3.ini
+a519897644e43757c2e2c8aa6ae12cdd  ./README.txt
+59b75c4e9096a426d3329d89dc49b700  ./kentang.py
+e51997b85d225472440b8d00bbf354fa  ./smtp-fail.py
+5e0f1baa879c65e0f5348f9421451206  ./2.ini
+a89614c04ed0ceed2832f6e9d3878fe1  ./1.ini
+7f396a7eb89670cad87edb6f4379aa7a  ./4.ini
