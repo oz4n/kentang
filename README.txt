@@ -11,3 +11,6 @@ python kentang.py 1.ini
 
 
 Please read kentang.py for more information
+
+todo:
+- more documentation
