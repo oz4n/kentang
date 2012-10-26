@@ -20,6 +20,7 @@ Kentang: Simple Network Monitoring Program
 - Arguments passed to event handler:
   - time 
   - hostname
+  - port
 
 - Started by: Noprianto <nop@tedut.com>
 
@@ -42,7 +43,7 @@ import poplib
 import socket
 
 NAME = 'kentang'
-VERSION = ( (0, 1), '18-SEP-2010' )
+VERSION = ( (0, 20), '26-OCT-2012-UTC+7' )
 PROTOCOLS = (
         'http', 
         'https',
@@ -378,9 +379,10 @@ class HostChecker(threading.Thread):
                 cmd = self.host['ok']
         #
         if cmd:
-            cmds = "%s '%s' '%s'" %(
+            cmds = "%s '%s' '%s' '%s'" %(
                 cmd, time.asctime(), 
-                self.host['host'])
+                self.host['host'], 
+                self.host['port'])
             log('  Execute %s %s-%s handler: %s' %(
                     self.host['host'], 
                     self.host['protocol'],

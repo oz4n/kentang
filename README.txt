@@ -1,4 +1,4 @@
-kentang, Simple Network Monitoring
+kentang, Simple Network Monitoring application
 (c) Noprianto <nop@tedut.com>
 2010 
 GPL
@@ -31,6 +31,7 @@ CONFIGURATION:
 - Arguments passed to event handler:
   - time
   - hostname
+  - port
 
 
 EXAMPLES:

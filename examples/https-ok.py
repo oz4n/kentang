@@ -8,8 +8,9 @@ if __name__ == '__main__':
     try:
         t = sys.argv[1]
         h = sys.argv[2]
+        p = sys.argv[3]
     except:
         sys.exit(1)
     #
-    line = '%s %s OK\n' %(t, h)
+    line = '%s %s %s OK\n' %(t, h, p)
     open(F, 'a+').write(line)
