@@ -43,7 +43,7 @@ import poplib
 import socket
 
 NAME = 'kentang'
-VERSION = ( (0, 20), '26-OCT-2012-UTC+7' )
+VERSION = ( (0, 30), '26-OCT-2012-UTC+7' )
 PROTOCOLS = (
         'http', 
         'https',
@@ -217,10 +217,12 @@ class HostChecker(threading.Thread):
             if secure:
                 if not port: 
                     port = 443
+                    self.host['port'] = port
                 conn = httplib.HTTPSConnection(self.host['host'], port)
             else:
                 if not port:
                     port = 80
+                    self.host['port'] = port
                 conn = httplib.HTTPConnection(self.host['host'], port)
             #
             conn.request('HEAD', '/')
@@ -257,6 +259,7 @@ class HostChecker(threading.Thread):
         port = self.host['port']
         if not port:
             port = 21
+            self.host['port'] = port
         #
         try:
             conn = ftplib.FTP()
@@ -282,6 +285,7 @@ class HostChecker(threading.Thread):
         port = self.host['port']
         if not port:
             port = 25
+            self.host['port'] = port
         #
         try:
             conn = smtplib.SMTP(self.host['host'], port)
@@ -308,10 +312,12 @@ class HostChecker(threading.Thread):
             if secure:
                 if not port: 
                     port = 993
+                    self.host['port'] = port
                 conn = imaplib.IMAP4_SSL(self.host['host'], port)
             else:
                 if not port:
                     port = 143
+                    self.host['port'] = port
                 conn = imaplib.IMAP4(self.host['host'], port)
             #
             info = '[OK]'
@@ -340,10 +346,12 @@ class HostChecker(threading.Thread):
             if secure:
                 if not port: 
                     port = 995
+                    self.host['port'] = port
                 conn = poplib.POP3_SSL(self.host['host'], port)
             else:
                 if not port:
                     port = 110
+                    self.host['port'] = port
                 conn = poplib.POP3(self.host['host'], port)
             #
             info = '[OK]'
